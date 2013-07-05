@@ -21,8 +21,8 @@
       <option name="OTHER" value="false" />
     </context>
   </template>
-  <template name="ptf" value="$OBJECT$.prototype.$NAME$ = function ($ARGUMENTS$) {&#10;    $END$&#10;};" description="Add function to a prototype" toReformat="false" toShortenFQNames="true">
-    <variable name="OBJECT" expression="" defaultValue="" alwaysStopAt="true" />
+  <template name="pt" value="$CLASS$.prototype.$NAME$ = function ($ARGUMENTS$) {&#10;    $END$&#10;};" description="Add function property to prototype" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="ARGUMENTS" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
@@ -153,8 +153,9 @@
       <option name="OTHER" value="false" />
     </context>
   </template>
-  <template name="afn" value="(function ($PARAMS$) {&#10;    $END$&#10;})($PARAMS$);" description="anonymous, self-executing function" toReformat="false" toShortenFQNames="true">
+  <template name="scope" value="(function ($PARAMS$) {&#10;    $END$&#10;})($INVOKEPARAMS$);" description="anonymous, self-executing function" toReformat="false" toShortenFQNames="true">
     <variable name="PARAMS" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="INVOKEPARAMS" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="HTML_TEXT" value="false" />
       <option name="HTML" value="false" />
@@ -235,112 +236,8 @@
       <option name="OTHER" value="false" />
     </context>
   </template>
-  <template name="jreq" value="define([&#10;    $IMPORTS$&#10;], function (&#10;    $SYMBOLS$&#10;) {&#10;    'use strict';&#10;&#10;    describe('$MODULE_DESCRIPTION$', function () {&#10;        beforeEach(function() {&#10;        });&#10;        &#10;        afterEach(function() {&#10;        });&#10;&#10;        it('$FUNCTIONALITY_DESCRIPTION$', function () {&#10;            $END$&#10;        });&#10;    });&#10;});&#10;" description="Jasmine+requirejs testing scaffold" toReformat="false" toShortenFQNames="true">
-    <variable name="IMPORTS" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="SYMBOLS" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="MODULE_DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="FUNCTIONALITY_DESCRIPTION" expression="" defaultValue="" alwaysStopAt="true" />
-    <context>
-      <option name="HTML_TEXT" value="false" />
-      <option name="HTML" value="false" />
-      <option name="XSL_TEXT" value="false" />
-      <option name="XML" value="false" />
-      <option name="JSP" value="false" />
-      <option name="CSS_PROPERTY_VALUE" value="false" />
-      <option name="CSS_DECLARATION_BLOCK" value="false" />
-      <option name="CSS_RULESET_LIST" value="false" />
-      <option name="CSS" value="false" />
-      <option name="JAVA_SCRIPT" value="true" />
-      <option name="SQL" value="false" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
-      <option name="CoffeeScript" value="false" />
-      <option name="PHP" value="false" />
-      <option name="HAML" value="false" />
-      <option name="OTHER" value="false" />
-    </context>
-  </template>
-  <template name="jbe" value="beforeEach(function () {&#10;    $END$&#10;});" description="Jasmine.beforeEach()" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="HTML_TEXT" value="false" />
-      <option name="HTML" value="false" />
-      <option name="XSL_TEXT" value="false" />
-      <option name="XML" value="false" />
-      <option name="JSP" value="false" />
-      <option name="CSS_PROPERTY_VALUE" value="false" />
-      <option name="CSS_DECLARATION_BLOCK" value="false" />
-      <option name="CSS_RULESET_LIST" value="false" />
-      <option name="CSS" value="false" />
-      <option name="JAVA_SCRIPT" value="true" />
-      <option name="SQL" value="false" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
-      <option name="CoffeeScript" value="false" />
-      <option name="PHP" value="false" />
-      <option name="HAML" value="false" />
-      <option name="OTHER" value="false" />
-    </context>
-  </template>
-  <template name="jae" value="afterEach(function () {&#10;    $END$&#10;});" description="Jasmine.afterEach()" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="HTML_TEXT" value="false" />
-      <option name="HTML" value="false" />
-      <option name="XSL_TEXT" value="false" />
-      <option name="XML" value="false" />
-      <option name="JSP" value="false" />
-      <option name="CSS_PROPERTY_VALUE" value="false" />
-      <option name="CSS_DECLARATION_BLOCK" value="false" />
-      <option name="CSS_RULESET_LIST" value="false" />
-      <option name="CSS" value="false" />
-      <option name="JAVA_SCRIPT" value="true" />
-      <option name="SQL" value="false" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
-      <option name="CoffeeScript" value="false" />
-      <option name="PHP" value="false" />
-      <option name="HAML" value="false" />
-      <option name="OTHER" value="false" />
-    </context>
-  </template>
-  <template name="jwf" value="waitsFor(function () {&#10;    return $END$;&#10;});" description="jasmine.waitsFor()" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="HTML_TEXT" value="false" />
-      <option name="HTML" value="false" />
-      <option name="XSL_TEXT" value="false" />
-      <option name="XML" value="false" />
-      <option name="JSP" value="false" />
-      <option name="CSS_PROPERTY_VALUE" value="false" />
-      <option name="CSS_DECLARATION_BLOCK" value="false" />
-      <option name="CSS_RULESET_LIST" value="false" />
-      <option name="CSS" value="false" />
-      <option name="JAVA_SCRIPT" value="true" />
-      <option name="SQL" value="false" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
-      <option name="CoffeeScript" value="false" />
-      <option name="PHP" value="false" />
-      <option name="HAML" value="false" />
-      <option name="OTHER" value="false" />
-    </context>
-  </template>
-  <template name="jrun" value="runs(function () {&#10;    $END$&#10;});" description="jasmine.runs()" toReformat="false" toShortenFQNames="true">
-    <context>
-      <option name="HTML_TEXT" value="false" />
-      <option name="HTML" value="false" />
-      <option name="XSL_TEXT" value="false" />
-      <option name="XML" value="false" />
-      <option name="JSP" value="false" />
-      <option name="CSS_PROPERTY_VALUE" value="false" />
-      <option name="CSS_DECLARATION_BLOCK" value="false" />
-      <option name="CSS_RULESET_LIST" value="false" />
-      <option name="CSS" value="false" />
-      <option name="JAVA_SCRIPT" value="true" />
-      <option name="SQL" value="false" />
-      <option name="CUCUMBER_FEATURE_FILE" value="false" />
-      <option name="CoffeeScript" value="false" />
-      <option name="PHP" value="false" />
-      <option name="HAML" value="false" />
-      <option name="OTHER" value="false" />
-    </context>
-  </template>
-  <template name="ptp" value="$OBJECT$.prototype.$NAME$ = $END$;" description="Add property to a prototype" toReformat="false" toShortenFQNames="true">
-    <variable name="OBJECT" expression="" defaultValue="" alwaysStopAt="true" />
+  <template name="ptp" value="$CLASS$.protype.$NAME$ = $END$;" description="Add regular property to prototype" toReformat="false" toShortenFQNames="true">
+    <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="HTML_TEXT" value="false" />
@@ -352,7 +249,28 @@
       <option name="CSS_DECLARATION_BLOCK" value="false" />
       <option name="CSS_RULESET_LIST" value="false" />
       <option name="CSS" value="false" />
-      <option name="JAVA_SCRIPT" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="SQL" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="PHP" value="false" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="ncb" value="function (err, $PARAMS$) {&#10;    $END$&#10;}" description="Node.js-style callback" toReformat="false" toShortenFQNames="true">
+    <variable name="PARAMS" expression="" defaultValue="res" alwaysStopAt="true" />
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="JSP" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
       <option name="SQL" value="false" />
       <option name="CUCUMBER_FEATURE_FILE" value="false" />
       <option name="CoffeeScript" value="false" />
