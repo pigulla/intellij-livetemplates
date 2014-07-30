@@ -160,7 +160,7 @@
       <option name="OTHER" value="false" />
     </context>
   </template>
-  <template name="scope" value="(function ($PARAMS$) {&#10;    $END$&#10;})($PARAMS$);" description="anonymous, self-executing function" toReformat="false" toShortenFQNames="true">
+  <template name="iife" value="(function ($PARAMS$) {&#10;    $END$&#10;})($PARAMS$);" description="immediately invoked function expression" toReformat="false" toShortenFQNames="true">
     <variable name="PARAMS" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="HTML_TEXT" value="false" />
@@ -529,6 +529,27 @@
     </context>
   </template>
   <template name="ci" value="console.info($END$);" description="console.info()" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="HTML_TEXT" value="false" />
+      <option name="HTML" value="false" />
+      <option name="XSL_TEXT" value="false" />
+      <option name="XML" value="false" />
+      <option name="JSP" value="false" />
+      <option name="CSS_PROPERTY_VALUE" value="false" />
+      <option name="CSS_DECLARATION_BLOCK" value="false" />
+      <option name="CSS_RULESET_LIST" value="false" />
+      <option name="CSS" value="false" />
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="TypeScript" value="false" />
+      <option name="SQL" value="false" />
+      <option name="CUCUMBER_FEATURE_FILE" value="false" />
+      <option name="CoffeeScript" value="false" />
+      <option name="PHP" value="false" />
+      <option name="HAML" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="jrun" value="runs(function () {&#10;    $END$&#10;});" description="Jasmine runs()" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="HTML_TEXT" value="false" />
       <option name="HTML" value="false" />
